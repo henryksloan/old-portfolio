@@ -9773,7 +9773,7 @@ module.exports = getIteratorFn;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -9786,6 +9786,10 @@ var _reactDom = __webpack_require__(49);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _resume = __webpack_require__(185);
+
+var _resume2 = _interopRequireDefault(_resume);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9794,31 +9798,149 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = function (_React$Component) {
-    _inherits(App, _React$Component);
+var ContactInfo = function (_React$Component) {
+  _inherits(ContactInfo, _React$Component);
 
-    function App() {
-        _classCallCheck(this, App);
+  function ContactInfo() {
+    _classCallCheck(this, ContactInfo);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ContactInfo.__proto__ || Object.getPrototypeOf(ContactInfo)).apply(this, arguments));
+  }
+
+  _createClass(ContactInfo, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { id: 'contact-info' },
+        _react2.default.createElement(
+          'p',
+          null,
+          _resume2.default.basics.location.region,
+          ', ',
+          _resume2.default.basics.location.countryCode
+        ),
+        _react2.default.createElement(
+          'a',
+          { href: "mailto:" + _resume2.default.basics.email },
+          _resume2.default.basics.email
+        )
+      );
     }
+  }]);
 
-    _createClass(App, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'p',
-                    null,
-                    'Henry'
-                )
-            );
-        }
-    }]);
+  return ContactInfo;
+}(_react2.default.Component);
 
-    return App;
+var ProfileLinks = function (_React$Component2) {
+  _inherits(ProfileLinks, _React$Component2);
+
+  function ProfileLinks() {
+    _classCallCheck(this, ProfileLinks);
+
+    return _possibleConstructorReturn(this, (ProfileLinks.__proto__ || Object.getPrototypeOf(ProfileLinks)).apply(this, arguments));
+  }
+
+  _createClass(ProfileLinks, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'ul',
+        { className: 'profiles' },
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement('a', { className: 'fa fa-github', href: _resume2.default.basics.profiles[0].url })
+        )
+      );
+    }
+  }]);
+
+  return ProfileLinks;
+}(_react2.default.Component);
+
+var Sidebar = function (_React$Component3) {
+  _inherits(Sidebar, _React$Component3);
+
+  function Sidebar() {
+    _classCallCheck(this, Sidebar);
+
+    return _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).apply(this, arguments));
+  }
+
+  _createClass(Sidebar, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'sidenav' },
+        _react2.default.createElement(
+          'div',
+          { className: 'image-circle' },
+          _react2.default.createElement('img', { src: _resume2.default.basics.picture })
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'h1',
+            null,
+            _resume2.default.basics.name
+          ),
+          _react2.default.createElement(
+            'h3',
+            null,
+            _resume2.default.basics.label
+          ),
+          _react2.default.createElement('hr', null),
+          _react2.default.createElement(ContactInfo, null),
+          _react2.default.createElement('hr', null),
+          _react2.default.createElement(ProfileLinks, null),
+          _react2.default.createElement('hr', null)
+        )
+      );
+    }
+  }]);
+
+  return Sidebar;
+}(_react2.default.Component);
+
+var App = function (_React$Component4) {
+  _inherits(App, _React$Component4);
+
+  function App() {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+  }
+
+  _createClass(App, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(Sidebar, null),
+        _react2.default.createElement(
+          'div',
+          { id: 'main' },
+          _react2.default.createElement(
+            'h1',
+            null,
+            'About'
+          ),
+          _react2.default.createElement('hr', null),
+          _react2.default.createElement(
+            'p',
+            null,
+            _resume2.default.basics.summary
+          )
+        )
+      );
+    }
+  }]);
+
+  return App;
 }(_react2.default.Component);
 
 exports.default = App;
@@ -22461,6 +22583,121 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 185 */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"basics": {
+		"name": "Henry Sloan",
+		"label": "Programmer",
+		"picture": "./profile.jpg",
+		"email": "henryksloan@gmail.com",
+		"phone": "",
+		"website": "https://henryksloan.github.io",
+		"summary": "Six years ago, I discovered programming, and found that the learning and building process of programming fit me as a person more than anything else. Since then, I have been spending a significant portion of my time learning and building on my skills, and exploring new technologies.",
+		"location": {
+			"address": "",
+			"postalCode": "",
+			"city": "",
+			"countryCode": "US",
+			"region": "New York"
+		},
+		"profiles": [
+			{
+				"network": "Github",
+				"username": "henryksloan",
+				"url": "https://github.com/henryksloan"
+			}
+		]
+	},
+	"work": [],
+	"volunteer": [],
+	"education": [
+		{
+			"institution": "High School",
+			"area": "",
+			"studyType": "",
+			"startDate": "2013",
+			"endDate": "2018",
+			"gpa": "",
+			"courses": []
+		}
+	],
+	"awards": [],
+	"publications": [
+		{
+			"name": "Death to the Privacy Calculus?",
+			"publisher": "SSRN",
+			"releaseDate": "2017-02-27",
+			"website": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2923806",
+			"summary": "A discussion of the practical and ethical questions of the privacy calculus model of users."
+		}
+	],
+	"skills": [
+		{
+			"name": "Machine Learning/Data Analysis",
+			"level": "Beginner",
+			"keywords": [
+				"Tensorflow",
+				"Keras",
+				"Scikit Learn",
+				"Numpy",
+				"Scipy",
+				"Pandas",
+				"R"
+			]
+		},
+		{
+			"name": "Web Development",
+			"level": "Intermediate",
+			"keywords": [
+				"HTML",
+				"CSS",
+				"Javascript",
+				"ReactJS",
+				"SQL"
+			]
+		},
+		{
+			"name": "Software Development",
+			"level": "Intermediate",
+			"keywords": [
+				"Python",
+				"Java",
+				"C",
+				"C++"
+			]
+		},
+		{
+			"name": "Unix Systems Administration",
+			"level": "Intermediate",
+			"keywords": [
+				"Debian/Ubuntu/Mint",
+				"openSUSE",
+				"Network Administration"
+			]
+		}
+	],
+	"languages": [
+		{
+			"name": "English",
+			"level": "Native speaker"
+		}
+	],
+	"interests": [
+		{
+			"name": "Machine Learning",
+			"keywords": [
+				"NLP",
+				"Generative Models",
+				"Adaptive User Experience"
+			]
+		}
+	],
+	"references": []
+};
 
 /***/ })
 /******/ ]);

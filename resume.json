@@ -1,0 +1,99 @@
+{
+  "basics": {
+    "name": "Henry Sloan",
+    "label": "Programmer",
+    "picture": "./profile.jpg",
+    "email": "henryksloan@gmail.com",
+    "phone": "",
+    "website": "https://henryksloan.github.io",
+    "summary": "Six years ago, I discovered programming, and found that the learning and building process of programming fit me as a person more than anything else. Since then, I have been spending a significant portion of my time learning and building on my skills, and exploring new technologies.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "",
+      "countryCode": "US",
+      "region": "New York"
+    },
+    "profiles": [{
+      "network": "Github",
+      "username": "henryksloan",
+      "url": "https://github.com/henryksloan"
+    }]
+  },
+  "work": [],
+  "volunteer": [],
+  "education": [{
+    "institution": "High School",
+    "area": "",
+    "studyType": "",
+    "startDate": "2013",
+    "endDate": "2018",
+    "gpa": "",
+    "courses": []
+  }],
+  "awards": [],
+  "publications": [{
+    "name": "Death to the Privacy Calculus?",
+    "publisher": "SSRN",
+    "releaseDate": "2017-02-27",
+    "website": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2923806",
+    "summary": "A discussion of the practical and ethical questions of the privacy calculus model of users."
+  }],
+  "skills": [{
+      "name": "Machine Learning/Data Analysis",
+      "level": "Beginner",
+      "keywords": [
+        "Tensorflow",
+        "Keras",
+        "Scikit Learn",
+        "Numpy",
+        "Scipy",
+        "Pandas",
+        "R"
+      ]
+    },
+    {
+      "name": "Web Development",
+      "level": "Intermediate",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "ReactJS",
+        "SQL"
+      ]
+    },
+    {
+      "name": "Software Development",
+      "level": "Intermediate",
+      "keywords": [
+        "Python",
+        "Java",
+        "C",
+        "C++"
+      ]
+    },
+    {
+      "name": "Unix Systems Administration",
+      "level": "Intermediate",
+      "keywords": [
+        "Debian/Ubuntu/Mint",
+        "openSUSE",
+        "Network Administration"
+      ]
+    }
+  ],
+  "languages": [{
+    "name": "English",
+    "level": "Native speaker"
+  }],
+  "interests": [{
+    "name": "Machine Learning",
+    "keywords": [
+      "NLP",
+      "Generative Models",
+      "Adaptive User Experience"
+    ]
+  }],
+  "references": []
+}

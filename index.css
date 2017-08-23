@@ -1,0 +1,103 @@
+body {
+    background-color: #E0E0E0;
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 300px; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #BDBDBD; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    margin-right: 8px;
+    border-right: 1px solid #f0f0f0;
+}
+
+.sidenav hr {
+    border-bottom: 1px solid #f0f0f0;
+    margin: 16px 0 16px 0;
+    border-right-width: 0;
+    border-left-width: 0;
+}
+
+.image-circle {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.sidenav img {
+    position:absolute;
+    /*250/282 -10/-40, */
+    width: 200px;
+    display: inline;
+    height: 226px;
+    margin-top: -10%;
+}
+
+#contact-info {
+    text-align: center;
+}
+
+#contact-info a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.profiles {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+.profiles a {
+    font-size: 2em;
+    text-decoration: none;
+    color: #000;
+    transition: color .5s;
+}
+
+.profiles a:hover {
+    color: #337ab7;
+}
+
+.sidenav h1 {
+    text-align: center;
+    color: #333;
+    margin: 0;
+}
+
+.sidenav h3 {
+    text-align: center;
+    color: #777;
+    margin: 0;
+}
+
+#main {
+    margin-left: 300px;
+}
+
+
+#main h1 {
+    color: #333;
+    margin: 0;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.sidenav p {
+    font-size: 15px;
+}
+
+#main p {
+    font-size: 18px;
+}
