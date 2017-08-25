@@ -22690,7 +22690,7 @@ module.exports = {
 	"basics": {
 		"name": "Henry Sloan",
 		"label": "Programmer",
-		"picture": "./profile.jpg",
+		"picture": "./profile-2.jpg",
 		"email": "henryksloan@gmail.com",
 		"phone": "",
 		"website": "https://henryksloan.github.io",
