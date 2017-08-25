@@ -9813,6 +9813,7 @@ var ContactInfo = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { id: 'contact-info' },
+        _react2.default.createElement('i', { className: 'fa fa-location-arrow text-icon' }),
         _react2.default.createElement(
           'p',
           null,
@@ -9820,9 +9821,11 @@ var ContactInfo = function (_React$Component) {
           ', ',
           _resume2.default.basics.location.countryCode
         ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('i', { className: 'fa fa-envelope text-icon' }),
         _react2.default.createElement(
           'a',
-          { href: "mailto:" + _resume2.default.basics.email },
+          { href: 'mailto:' + _resume2.default.basics.email },
           _resume2.default.basics.email
         )
       );
@@ -9905,8 +9908,112 @@ var Sidebar = function (_React$Component3) {
   return Sidebar;
 }(_react2.default.Component);
 
-var App = function (_React$Component4) {
-  _inherits(App, _React$Component4);
+var Section = function (_React$Component4) {
+  _inherits(Section, _React$Component4);
+
+  function Section() {
+    _classCallCheck(this, Section);
+
+    return _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).apply(this, arguments));
+  }
+
+  _createClass(Section, [{
+    key: 'render',
+    value: function render() {
+      var icon = this.props.icon;
+      if (icon) {
+        icon = _react2.default.createElement('i', { className: 'fa ' + icon + ' text-icon' });
+      } else {
+        icon = null;
+      }
+      return _react2.default.createElement(
+        'div',
+        { className: 'section' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          icon,
+          this.props.name
+        ),
+        _react2.default.createElement('hr', null),
+        this.props.children
+      );
+    }
+  }]);
+
+  return Section;
+}(_react2.default.Component);
+
+var AboutSection = function (_React$Component5) {
+  _inherits(AboutSection, _React$Component5);
+
+  function AboutSection() {
+    _classCallCheck(this, AboutSection);
+
+    return _possibleConstructorReturn(this, (AboutSection.__proto__ || Object.getPrototypeOf(AboutSection)).apply(this, arguments));
+  }
+
+  _createClass(AboutSection, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        Section,
+        { name: 'About', icon: 'fa-user' },
+        _react2.default.createElement(
+          'p',
+          null,
+          _resume2.default.basics.summary
+        )
+      );
+    }
+  }]);
+
+  return AboutSection;
+}(_react2.default.Component);
+
+var SkillsSection = function (_React$Component6) {
+  _inherits(SkillsSection, _React$Component6);
+
+  function SkillsSection() {
+    _classCallCheck(this, SkillsSection);
+
+    return _possibleConstructorReturn(this, (SkillsSection.__proto__ || Object.getPrototypeOf(SkillsSection)).apply(this, arguments));
+  }
+
+  _createClass(SkillsSection, [{
+    key: 'render',
+    value: function render() {
+      var skills = [];
+      _resume2.default.skills.forEach(function (skill, index) {
+        skills.push(_react2.default.createElement(
+          'div',
+          { className: 'skill', key: index },
+          _react2.default.createElement(
+            'h3',
+            null,
+            skill.name
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            skill.keywords.join(', ')
+          )
+        ));
+      });
+
+      return _react2.default.createElement(
+        Section,
+        { name: 'Skills', icon: 'fa-cog' },
+        skills
+      );
+    }
+  }]);
+
+  return SkillsSection;
+}(_react2.default.Component);
+
+var App = function (_React$Component7) {
+  _inherits(App, _React$Component7);
 
   function App() {
     _classCallCheck(this, App);
@@ -9924,17 +10031,8 @@ var App = function (_React$Component4) {
         _react2.default.createElement(
           'div',
           { id: 'main' },
-          _react2.default.createElement(
-            'h1',
-            null,
-            'About'
-          ),
-          _react2.default.createElement('hr', null),
-          _react2.default.createElement(
-            'p',
-            null,
-            _resume2.default.basics.summary
-          )
+          _react2.default.createElement(AboutSection, null),
+          _react2.default.createElement(SkillsSection, null)
         )
       );
     }
@@ -22638,7 +22736,7 @@ module.exports = {
 	"skills": [
 		{
 			"name": "Machine Learning/Data Analysis",
-			"level": "Beginner",
+			"level": "Intermediate",
 			"keywords": [
 				"Tensorflow",
 				"Keras",
