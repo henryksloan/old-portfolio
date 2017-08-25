@@ -97,10 +97,13 @@ body {
     text-align: center;
 }
 
-#contact-info a {
-    font-size: 15px;
+a {
     color: #337ab7;
     text-decoration: none;
+}
+
+#contact-info a {
+    font-size: 15px;
 }
 
 .profiles {
@@ -142,16 +145,16 @@ body {
     margin: 0;
 }
 
-.skill {
+.section > .item:not(:last-child) {
     margin-bottom: 8px;
 }
 
-.skill h3 {
+.item h3 {
     margin: 0;
     color: #333;
 }
 
-.skill p {
+.item p {
     font-size: 16px !important;
     color: #777;
 }
@@ -162,6 +165,10 @@ p {
 
 .section p {
     font-size: 18px;
+}
+
+.summary {
+    color: black !important;
 }
 
 .text-icon {

@@ -7,7 +7,7 @@ class ContactInfo extends React.Component {
     return (
       <div id='contact-info'>
         <i className='fa fa-location-arrow text-icon' />
-        <p>{Resume.basics.location.region}, {Resume.basics.location.countryCode}</p>
+        <p>{Resume.basics.location.city}, {Resume.basics.location.region}, {Resume.basics.location.countryCode}</p>
         <br />
         <i className='fa fa-envelope text-icon' />
         <a href={'mailto:' + Resume.basics.email}>{Resume.basics.email}</a>
@@ -42,7 +42,6 @@ class Sidebar extends React.Component {
             <ContactInfo />
           <hr />
             <ProfileLinks />
-          <hr />
         </div>
       </div>);
   }
@@ -80,20 +79,41 @@ class AboutSection extends React.Component {
   }
 }
 
-class SkillsSection extends React.Component {
+class PublicationSection extends React.Component {
   render() {
-    var skills = [];
-    Resume.skills.forEach(function(skill, index) {
-      skills.push(
-        <div className='skill' key={index}>
-          <h3>{skill.name}</h3>
-          <p>{skill.keywords.join(', ')}</p>
+    var list = Resume.publications;
+    var items = [];
+    list.forEach(function(item, index) {
+      items.push(
+        <div className='item' key={index}>
+          <h3><a href={item.website}>{item.name}</a></h3>
+          <p>{item.publisher + ' - ' + item.releaseDate}</p>
+          <p className='summary'>{item.summary}</p>
+        </div>);
+    });
+    return (
+      <Section name='Publications' icon='fa-file-text'>
+        {items}
+      </Section>
+    );
+  }
+}
+
+class ListSection extends React.Component {
+  render() {
+    var list = this.props.list;
+    var items = [];
+    list.forEach(function(item, index) {
+      items.push(
+        <div className='item' key={index}>
+          <h3>{item.name}</h3>
+          <p>{item.keywords.join(', ')}</p>
         </div>);
     });
 
     return (
-      <Section name='Skills' icon='fa-cog'>
-        {skills}
+      <Section name={this.props.name} icon={this.props.icon}>
+        {items}
       </Section>
     );
   }
@@ -106,7 +126,9 @@ class App extends React.Component {
         <Sidebar />
         <div id='main'>
           <AboutSection />
-          <SkillsSection />
+          <ListSection name='Skills' icon='fa-cog' list={Resume.skills} />
+          <PublicationSection />
+          <ListSection name='Interests' icon='fa-question' list={Resume.interests} />
         </div>
       </div>);
   }

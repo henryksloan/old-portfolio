@@ -10,7 +10,7 @@
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "",
+      "city": "Nyack",
       "countryCode": "US",
       "region": "New York"
     },
@@ -23,7 +23,7 @@
   "work": [],
   "volunteer": [],
   "education": [{
-    "institution": "High School",
+    "institution": "Nyack High School",
     "area": "",
     "studyType": "",
     "startDate": "2013",
@@ -84,8 +84,12 @@
     }
   ],
   "languages": [{
-    "name": "English",
-    "level": "Native speaker"
+      "name": "English",
+      "level": "Native speaker"
+  },
+  {
+      "name": "German",
+      "level": "Learning"
   }],
   "interests": [{
     "name": "Machine Learning",
@@ -93,6 +97,15 @@
       "NLP",
       "Generative Models",
       "Adaptive User Experience"
+    ]
+  },
+  {
+    "name": "Linguistics",
+    "keywords": [
+        "Historical Linguistics",
+        "German",
+        "Spanish",
+        "Conlanging"
     ]
   }],
   "references": []

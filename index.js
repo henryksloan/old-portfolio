@@ -9817,6 +9817,8 @@ var ContactInfo = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
+          _resume2.default.basics.location.city,
+          ', ',
           _resume2.default.basics.location.region,
           ', ',
           _resume2.default.basics.location.countryCode
@@ -9898,8 +9900,7 @@ var Sidebar = function (_React$Component3) {
           _react2.default.createElement('hr', null),
           _react2.default.createElement(ContactInfo, null),
           _react2.default.createElement('hr', null),
-          _react2.default.createElement(ProfileLinks, null),
-          _react2.default.createElement('hr', null)
+          _react2.default.createElement(ProfileLinks, null)
         )
       );
     }
@@ -9971,49 +9972,100 @@ var AboutSection = function (_React$Component5) {
   return AboutSection;
 }(_react2.default.Component);
 
-var SkillsSection = function (_React$Component6) {
-  _inherits(SkillsSection, _React$Component6);
+var PublicationSection = function (_React$Component6) {
+  _inherits(PublicationSection, _React$Component6);
 
-  function SkillsSection() {
-    _classCallCheck(this, SkillsSection);
+  function PublicationSection() {
+    _classCallCheck(this, PublicationSection);
 
-    return _possibleConstructorReturn(this, (SkillsSection.__proto__ || Object.getPrototypeOf(SkillsSection)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (PublicationSection.__proto__ || Object.getPrototypeOf(PublicationSection)).apply(this, arguments));
   }
 
-  _createClass(SkillsSection, [{
+  _createClass(PublicationSection, [{
     key: 'render',
     value: function render() {
-      var skills = [];
-      _resume2.default.skills.forEach(function (skill, index) {
-        skills.push(_react2.default.createElement(
+      var list = _resume2.default.publications;
+      var items = [];
+      list.forEach(function (item, index) {
+        items.push(_react2.default.createElement(
           'div',
-          { className: 'skill', key: index },
+          { className: 'item', key: index },
           _react2.default.createElement(
             'h3',
             null,
-            skill.name
+            _react2.default.createElement(
+              'a',
+              { href: item.website },
+              item.name
+            )
           ),
           _react2.default.createElement(
             'p',
             null,
-            skill.keywords.join(', ')
+            item.publisher + ' - ' + item.releaseDate
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'summary' },
+            item.summary
+          )
+        ));
+      });
+      return _react2.default.createElement(
+        Section,
+        { name: 'Publications', icon: 'fa-file-text' },
+        items
+      );
+    }
+  }]);
+
+  return PublicationSection;
+}(_react2.default.Component);
+
+var ListSection = function (_React$Component7) {
+  _inherits(ListSection, _React$Component7);
+
+  function ListSection() {
+    _classCallCheck(this, ListSection);
+
+    return _possibleConstructorReturn(this, (ListSection.__proto__ || Object.getPrototypeOf(ListSection)).apply(this, arguments));
+  }
+
+  _createClass(ListSection, [{
+    key: 'render',
+    value: function render() {
+      var list = this.props.list;
+      var items = [];
+      list.forEach(function (item, index) {
+        items.push(_react2.default.createElement(
+          'div',
+          { className: 'item', key: index },
+          _react2.default.createElement(
+            'h3',
+            null,
+            item.name
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            item.keywords.join(', ')
           )
         ));
       });
 
       return _react2.default.createElement(
         Section,
-        { name: 'Skills', icon: 'fa-cog' },
-        skills
+        { name: this.props.name, icon: this.props.icon },
+        items
       );
     }
   }]);
 
-  return SkillsSection;
+  return ListSection;
 }(_react2.default.Component);
 
-var App = function (_React$Component7) {
-  _inherits(App, _React$Component7);
+var App = function (_React$Component8) {
+  _inherits(App, _React$Component8);
 
   function App() {
     _classCallCheck(this, App);
@@ -10032,7 +10084,9 @@ var App = function (_React$Component7) {
           'div',
           { id: 'main' },
           _react2.default.createElement(AboutSection, null),
-          _react2.default.createElement(SkillsSection, null)
+          _react2.default.createElement(ListSection, { name: 'Skills', icon: 'fa-cog', list: _resume2.default.skills }),
+          _react2.default.createElement(PublicationSection, null),
+          _react2.default.createElement(ListSection, { name: 'Interests', icon: 'fa-question', list: _resume2.default.interests })
         )
       );
     }
@@ -22698,7 +22752,7 @@ module.exports = {
 		"location": {
 			"address": "",
 			"postalCode": "",
-			"city": "",
+			"city": "Nyack",
 			"countryCode": "US",
 			"region": "New York"
 		},
@@ -22714,7 +22768,7 @@ module.exports = {
 	"volunteer": [],
 	"education": [
 		{
-			"institution": "High School",
+			"institution": "Nyack High School",
 			"area": "",
 			"studyType": "",
 			"startDate": "2013",
@@ -22782,6 +22836,10 @@ module.exports = {
 		{
 			"name": "English",
 			"level": "Native speaker"
+		},
+		{
+			"name": "German",
+			"level": "Learning"
 		}
 	],
 	"interests": [
@@ -22791,6 +22849,15 @@ module.exports = {
 				"NLP",
 				"Generative Models",
 				"Adaptive User Experience"
+			]
+		},
+		{
+			"name": "Linguistics",
+			"keywords": [
+				"Historical Linguistics",
+				"German",
+				"Spanish",
+				"Conlanging"
 			]
 		}
 	],
