@@ -1,19 +1,25 @@
 body {
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #E0E0E0;
 }
 
 .sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 300px; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
-    background-color: #BDBDBD; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    background-color: #BDBDBD;
+    overflow-x: hidden;
+    transition: 0.5s;
     margin-right: 8px;
     border-right: 1px solid #f0f0f0;
+}
+
+.sidenav p {
+    display: inline-block;
+    font-size: 15px;
 }
 
 .sidenav hr {
@@ -34,7 +40,6 @@ body {
 
 .sidenav img {
     position:absolute;
-    /*250/282 -10/-40, */
     width: 200px;
     display: inline;
     height: 226px;
@@ -46,6 +51,7 @@ body {
 }
 
 #contact-info a {
+    font-size: 15px;
     color: #337ab7;
     text-decoration: none;
 }
@@ -83,21 +89,39 @@ body {
     margin-left: 300px;
 }
 
+.section {
+    padding-bottom: 30px;
+}
 
-#main h1 {
+.section h1 {
     color: #333;
+    display: inline-block;
     margin: 0;
+}
+
+.skill {
+    margin-bottom: 8px;
+}
+
+.skill h3 {
+    margin: 0;
+    color: #333;
+}
+
+.skill p {
+    font-size: 16px !important;
+    color: #777;
 }
 
 p {
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
-.sidenav p {
-    font-size: 15px;
+.section p {
+    font-size: 18px;
 }
 
-#main p {
-    font-size: 18px;
+.text-icon {
+    padding-right: 0.25em;
+    color: #333;
 }

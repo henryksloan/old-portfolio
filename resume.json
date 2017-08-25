@@ -41,7 +41,7 @@
   }],
   "skills": [{
       "name": "Machine Learning/Data Analysis",
-      "level": "Beginner",
+      "level": "Intermediate",
       "keywords": [
         "Tensorflow",
         "Keras",
